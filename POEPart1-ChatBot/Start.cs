@@ -11,9 +11,14 @@ namespace POEPart1_ChatBot
     {
         public static string DispalyAsciiArt()
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("Hi my name is ...");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("╔════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║              CYBERSECURITY AWARENESS BOT               ║");
+            Console.WriteLine("╚════════════════════════════════════════════════════════╝");
+
+
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Hi my name is ...");
             Console.WriteLine(@"
  /$$$$$$$                                      /$$$$$$$              /$$          
 | $$__  $$                                    | $$__  $$            | $$          
@@ -26,20 +31,21 @@ namespace POEPart1_ChatBot
                                                                                                                                                           
             ");
 
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-
-            Console.Write("Please let me know what I can call you -> ");
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write("Before we start, please let me know what I can call you -> ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             string userName = Console.ReadLine();
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("\nPerfect \n");
 
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.Write("\nHello, ");
             Console.ForegroundColor = ConsoleColor.Red; 
             Console.Write(userName);
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("! I'm here to help you stay safe online.\n");
-            Console.ForegroundColor = ConsoleColor.White;
+
             return userName;
         }
 
