@@ -22,10 +22,10 @@ jobs:
         run: dotnet --version
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore POEPart1-ChatBot/POEPart1-ChatBot.sln
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build POEPart1-ChatBot/POEPart1-ChatBot.sln --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test POEPart1-ChatBot/POEPart1-ChatBot.sln --no-build --verbosity normal
