@@ -1,4 +1,4 @@
-name: Build and Test .NET Core Preview
+name: Build and Test .NET 9
 
 on:
   push:
@@ -10,19 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Set up .NET SDK
-        uses: actions/setup-dotnet@v2
+      - name: Setup .NET 9 SDK
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.0-preview.1' # For .NET 9.0 preview
+          dotnet-version: '9.0.200'
+
+      - name: Display .NET version
+        run: dotnet --version
 
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release --no-restore
 
-      - name: Run tests
-        run: dotnet test --configuration Release
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
