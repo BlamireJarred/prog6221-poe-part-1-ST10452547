@@ -16,18 +16,24 @@ namespace POEPart1_ChatBot
         }
         public void Run()
         {
-            Console.WriteLine("You can ask me things like by just typing the number next to it:");
+            Console.WriteLine("You can ask me things about cyber safety, the current questions I can answer are:");
             Console.WriteLine("- 1. How are you?");
             Console.WriteLine("- 2. What's your purpose?");
             Console.WriteLine("- 3. What can I ask you about?");
             Console.WriteLine("- 4. Password safety");
             Console.WriteLine("- 5. Phishing");
             Console.WriteLine("- 6. Safe browsing\n");
+            Console.WriteLine("Juast type the number of the question you want answered\n");
 
             while (true)
             {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.Write("\nAsk a question (or type 'exit' to quit): ");
+                Console.ResetColor();
+
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 string input = Console.ReadLine().ToLower();
+                Console.ResetColor();
 
                 if (input == "exit")
                 {
@@ -39,9 +45,11 @@ namespace POEPart1_ChatBot
             }
         }
 
-        private void RespondToQuestion(string input)
+        private void RespondToQuestion(string response)
         {
-            switch (input)
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            switch (response)
             {
                 case "1":
                     Console.WriteLine("I'm just a bot, but I'm always ready to protect your digital life!");
@@ -65,6 +73,8 @@ namespace POEPart1_ChatBot
                     Console.WriteLine("Sorry, I don't understand that yet. Could you rephrase?");
                     break;
             }
+
+            Console.ResetColor();
         }
     }
 }

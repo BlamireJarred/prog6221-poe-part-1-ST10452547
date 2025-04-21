@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace POEPart1_ChatBot
         public static string DispalyAsciiArt()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("Greetings human!");
+            Console.WriteLine("Hi my name is ...");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(@"
  /$$$$$$$                                      /$$$$$$$              /$$          
@@ -25,28 +26,36 @@ namespace POEPart1_ChatBot
                                                                                                                                                           
             ");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
 
-            Console.WriteLine("Please enter your name: ");
+            Console.Write("Please let me know what I can call you -> ");
+            Console.ForegroundColor = ConsoleColor.Red;
             string userName = Console.ReadLine();
 
-            Console.WriteLine($"\nHello, {userName}! I'm here to help you stay safe online.\n");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+            Console.Write("\nHello, ");
+            Console.ForegroundColor = ConsoleColor.Red; 
+            Console.Write(userName);
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("! I'm here to help you stay safe online.\n");
+            Console.ForegroundColor = ConsoleColor.White;
             return userName;
         }
 
         public void PlayGreeting()
         {
-            /*try
+            try
             {
                 SoundPlayer player = new SoundPlayer("greeting.wav");
                 player.Load();
-                player.PlaySync(); // PlaySync waits until playback finishes
+                player.PlaySync(); 
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error playing audio: {ex.Message}");
-            }*/
-            Console.WriteLine(@"Greeting wav played");
+            }
+            //Hello and welcome to dave bot, a personalized chat bot to help you stay safe of the internet
         }
     }
 }
