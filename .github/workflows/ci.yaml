@@ -1,10 +1,9 @@
-name: .NET Build & Check
+name: Build and Test .NET Core
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -12,15 +11,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Setup .NET 9.0 Preview
-        uses: actions/setup-dotnet@v3
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 9.0.0-preview.1
+          dotnet-version: '6.0.x' # Or '7.0.x' for .NET 7.0
 
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Build project
-        run: dot
+      - name: Build
+        run: dotnet build --configuration Release
+
+      - name: Run tests
+        run: dotnet test --configuration Release
