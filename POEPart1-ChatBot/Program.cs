@@ -8,8 +8,8 @@ namespace POEPart1_ChatBot
     {
         static void Main(string[] args)
         {
-            Start art = new Start();
-            art.PlayGreeting();
+            Start start = new Start();
+            //start.PlayGreeting();
             String userName = Start.DispalyAsciiArt();
 
             ChatBot dave = new ChatBot(userName);
